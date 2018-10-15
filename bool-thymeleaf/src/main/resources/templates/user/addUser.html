@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户添加或修改页面</title>
+</head>
+<body>
+<center>
+
+    <span th:replace="~{fragment/header :: header}"></span>
+
+    <h2 th:text="用户添加页面"></h2>
+
+    <form th:action="@{/boot/user}" th:method="post">
+        <input type="hidden" name="id"/>
+        name：<input type="text" name="name"/>
+        email:<input type="text" name="email"/>
+
+        <input type="submit" th:value="提交"/>
+    </form>
+
+    <span th:replace="~{fragment/footer :: footer}"></span>
+
+</center>
+
+</body>
+</html>

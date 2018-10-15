@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表页面</title>
+</head>
+<body>
+
+<center>
+
+    <span th:replace="~{fragment/header :: header}"></span>
+
+    <h2>用户列表</h2>
+    <h3><a th:href="@{/boot/user}">添加</a></h3>
+    <div>
+
+        <table>
+           <tr>
+               <td>id</td>
+               <td>name</td>
+               <td>email</td>
+           </tr>
+
+            <!--循环列出用户的列表信息-->
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.email}"></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <span th:replace="~{fragment/footer :: footer}"></span>
+</center>
+
+</body>
+</html>
